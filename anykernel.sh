@@ -4,12 +4,12 @@
 ## AnyKernel setup
 # begin properties
 properties() { '
-kernel.string=Kat Kernel @raphielscape
+kernel.string=Genom Kernel @rama982
 do.devicecheck=1
 do.modules=0
 do.cleanup=1
 do.cleanuponabort=1
-device.name1=mido
+device.name1=vince
 '; } # end properties
 
 # shell variables
@@ -34,7 +34,6 @@ dump_boot;
 # begin ramdisk changes
 
 # add raphielscape initialization script
-insert_line init.rc "import /init.spectrum.rc" after "import /init.trace.rc" "import /init.spectrum.rc";
 insert_line init.rc "import /init.raphiel.rc" after "import /init.spectrum.rc" "import /init.raphiel.rc";
 
 #remove conflicting scheduler tuningscape
