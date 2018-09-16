@@ -1,11 +1,13 @@
-NAME ?= Genom
+NAME ?= GenomPie
 
 
-DATE := $(shell date "+%Y%m%d-%I%M")
+COMMIT := $(shell cd .. && git log -1 --pretty=format:"%h" && cd AnyKernel2)
 
-CODE := PR2-R5P-Vince-P
+DATE := $(shell date "+%Y%m%d")
 
-ZIP := $(NAME)-$(CODE)-$(DATE).zip
+CODE := vince-r2
+
+ZIP := $(NAME)-$(CODE)-$(DATE)-$(COMMIT).zip
 
 EXCLUDE := Makefile *.git* *.jar* *placeholder* *.md*
 
@@ -21,7 +23,7 @@ $(ZIP):
 
 
 clean:
-	@rm -vf "$(NAME)-"*.zip*
+	@rm -vf *.zip*
 	@rm -vf kernel/Image.gz
 	@rm -vf treble/msm8953-qrd-sku3-e7-treble.dtb
 	@rm -vf nontreble/msm8953-qrd-sku3-e7-non-treble.dtb
