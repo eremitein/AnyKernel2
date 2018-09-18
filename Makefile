@@ -1,13 +1,18 @@
-NAME ?= GenomPie
+BRANCH :=  $(shell cd .. && git branch | grep \* | cut -d ' ' -f2 | cut -d '-' -f1 && cd AnyKernel2)
 
+ifeq ($(BRANCH), pie);
+	BRANCH2 :=  -$(shell cd .. && git branch | grep \* | cut -d ' ' -f2 | cut -d '-' -f2 && cd AnyKernel2)
+endif
+
+NAME ?= GenomKernel
 
 COMMIT := $(shell cd .. && git log -1 --pretty=format:"%h" && cd AnyKernel2)
 
 DATE := $(shell date "+%Y%m%d")
 
-CODE := vince-r2
+CODE := vince-2.0
 
-ZIP := $(NAME)-$(CODE)-$(DATE)-$(COMMIT).zip
+ZIP := $(NAME)$(BRANCH2)-$(CODE)-$(DATE)-$(COMMIT).zip
 
 EXCLUDE := Makefile *.git* *.jar* *placeholder* *.md*
 
