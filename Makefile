@@ -6,7 +6,7 @@ endif
 
 NAME ?= GenomKernel
 
-COMMIT := $(shell cd .. && git log -1 --pretty=format:"%h" && cd AnyKernel2)
+COMMIT := $(shell cd .. && git rev-parse --short=8 HEAD && cd AnyKernel2)
 
 DATE := $(shell date "+%Y%m%d")
 
