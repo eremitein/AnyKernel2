@@ -33,6 +33,8 @@ dump_boot;
 
 # begin ramdisk changes
 
+insert_line init.rc "init.genom.rc" after "import /init.environ.rc" "import /init.genom.rc\n";
+
 # sepolicy
 $bin/sepolicy-inject -s init -t rootfs -c file -p execute_no_trans -P sepolicy;
 $bin/sepolicy-inject -s init -t vendor_configs_file -c file -p mounton -P sepolicy;
