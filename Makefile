@@ -1,8 +1,8 @@
-NAME ?= GenomKernel
+NAME ?= Genom
 
 DATE := $(shell date "+%Y%m%d-%H%M")
 
-CODE := Pie-CAF
+CODE := Sakura-MIUI-CAF
 
 ZIP := $(NAME)-$(CODE)-$(DATE).zip
 
@@ -21,9 +21,11 @@ $(ZIP):
 
 clean:
 	@rm -vf *.zip*
-	@rm -vf kernel/Image.gz
-	@rm -vf treble/msm8953-qrd-sku3-e7-treble.dtb
-	@rm -vf nontreble/msm8953-qrd-sku3-e7-non-treble.dtb
+	@rm -vf kernel/*.gz
+	@rm -vf treble/*.dtb
+	@rm -vf modules/system/lib/modules/*.ko
+	@rm -vf modules/system/vendor/lib/modules/*.ko
+	@rm -vf modules/system/vendor/lib/modules/pronto/*.ko
 	@echo "Done."
 
 

@@ -4,12 +4,12 @@
 ## AnyKernel setup
 # begin properties
 properties() { '
-kernel.string=Genom Kernel @rama982
+kernel.string=Genom Kernel for MIUI by rama982
 do.devicecheck=1
-do.modules=0
+do.modules=1
 do.cleanup=1
 do.cleanuponabort=1
-device.name1=vince
+device.name1=sakura
 '; } # end properties
 
 # shell variables
@@ -32,8 +32,6 @@ chown -R root:root $ramdisk/*;
 dump_boot;
 
 # begin ramdisk changes
-
-insert_line init.rc "init.genom.rc" after "import /init.environ.rc" "import /init.genom.rc\n";
 
 # sepolicy
 $bin/sepolicy-inject -s init -t rootfs -c file -p execute_no_trans -P sepolicy;
