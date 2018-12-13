@@ -1,8 +1,8 @@
-NAME ?= Genom
+NAME ?= Daisy-Kernel
 
 DATE := $(shell date "+%Y%m%d-%H%M")
 
-CODE := Sakura-MIUI-CAF
+CODE := Custom
 
 ZIP := $(NAME)-$(CODE)-$(DATE).zip
 

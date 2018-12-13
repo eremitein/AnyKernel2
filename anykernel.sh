@@ -4,12 +4,12 @@
 ## AnyKernel setup
 # begin properties
 properties() { '
-kernel.string=Genom Kernel for MIUI by rama982
-do.devicecheck=1
+kernel.string=Custom Kernel for MIUI
+do.devicecheck=0
 do.modules=1
 do.cleanup=1
 do.cleanuponabort=1
-device.name1=sakura
+device.name1=daisy
 '; } # end properties
 
 # shell variables
