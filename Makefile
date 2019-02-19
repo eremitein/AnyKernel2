@@ -1,4 +1,4 @@
-NAME ?= Upstream
+NAME ?= Genom
 
 DATE := $(shell date "+%Y%m%d-%H%M")
 
